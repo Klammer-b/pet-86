@@ -29,6 +29,26 @@
       "isVaccinated": false,
       "gender": "male",
       "species": "cat"
+    },
+    {
+      "id": "Koyb0eDOl5XU3f_RVxUzl",
+      "createdAt": "2023-11-20T19:14:45.456Z",
+      "updatedAt": "2023-11-20T19:14:45.456Z",
+      "name": "Uzbek",
+      "age": 3,
+      "isVaccinated": false,
+      "gender": "male",
+      "species": "cat"
+    },
+    {
+      "id": "5bcc5ZeVDY0BeJdOsdXIq",
+      "createdAt": "2023-11-20T19:17:51.535Z",
+      "updatedAt": "2023-11-20T19:17:51.535Z",
+      "name": "Test",
+      "age": "1",
+      "isVaccinated": "true",
+      "gender": "female",
+      "species": "cat"
     }
   ]
 }
