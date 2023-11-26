@@ -83,39 +83,9 @@
     {
       "id": "V1bpao0-_RsVEdaudO7vN",
       "createdAt": "2023-11-22T18:39:20.718Z",
-      "updatedAt": "2023-11-22T18:39:20.718Z",
-      "name": "Uzbek",
-      "age": 5,
-      "isVaccinated": false,
-      "gender": "male",
-      "species": "cat"
-    },
-    {
-      "id": "R3B8K6cnATKStJtf9NjFu",
-      "createdAt": "2023-11-22T18:41:40.763Z",
-      "updatedAt": "2023-11-22T18:41:40.763Z",
-      "name": "Uzbek",
-      "age": 5,
-      "isVaccinated": false,
-      "gender": "male",
-      "species": "cat"
-    },
-    {
-      "id": "L3IemCYCVmhNWikjx1ogI",
-      "createdAt": "2023-11-22T18:43:10.410Z",
-      "updatedAt": "2023-11-22T18:43:10.410Z",
-      "name": "Uzbek",
-      "age": 5,
-      "isVaccinated": false,
-      "gender": "male",
-      "species": "cat"
-    },
-    {
-      "id": "3nMzYzsb69Xg1IT6UkZIz",
-      "createdAt": "2023-11-22T19:17:45.960Z",
-      "updatedAt": "2023-11-22T19:17:45.960Z",
-      "name": "Uzbek",
-      "age": 5,
+      "updatedAt": "2023-11-26T09:38:55.708Z",
+      "name": "Uzbek1",
+      "age": 6,
       "isVaccinated": false,
       "gender": "male",
       "species": "cat"

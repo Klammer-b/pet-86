@@ -24,7 +24,21 @@ class AnimalsService {
     return await this.animalRepository.create(animal);
   }
 
-  updateById(id, payload) {}
+  async updateById(id, payload) {
+    const animal = await this.animalRepository.updateById(id, payload);
+    if (!animal) {
+      throw new HttpError(404, 'Animal is not found');
+    }
+    return animal;
+  }
+
+  async deleteById(id) {
+    const animal = await this.animalRepository.deleteById(id);
+    if (!animal) {
+      throw new HttpError(404, 'Animal is not found');
+    }
+    return { id };
+  }
 }
 
 const animalsService = new AnimalsService(animalRepository);

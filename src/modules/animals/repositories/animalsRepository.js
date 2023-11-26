@@ -32,6 +32,39 @@ class AnimalsRepository {
     await this.writeDB(db);
     return animal;
   }
+
+  async updateById(animalId, payload) {
+    const animal = await this.findOneById(animalId);
+    if (!animal) {
+      return;
+    }
+
+    const db = await this.readDB();
+    const animalIndex = db.animals.findIndex(({ id }) => id === animalId);
+
+    const updatedAnimal = {
+      ...db.animals[animalIndex],
+      ...payload,
+      updatedAt: new Date().toISOString(),
+    };
+
+    db.animals[animalIndex] = updatedAnimal;
+    await this.writeDB(db);
+    return updatedAnimal;
+  }
+
+  async deleteById(animalId) {
+    const animal = await this.findOneById(animalId);
+    if (!animal) {
+      return;
+    }
+
+    const db = await this.readDB();
+    const filteredAnimals = db.animals.filter(({ id }) => id !== animalId);
+    db.animals = filteredAnimals;
+    await this.writeDB(db);
+    return animalId;
+  }
 }
 
 const animalRepository = new AnimalsRepository();
