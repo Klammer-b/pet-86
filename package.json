@@ -12,8 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "commander": "^11.1.0",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "joi": "^17.11.0",
+    "mongoose": "^8.0.1",
     "morgan": "^1.10.0",
     "nanoid": "3.3.4"
   },
