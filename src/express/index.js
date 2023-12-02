@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(assignRequestId);
 app.use(getLogger());
 
-app.use(routes);
+app.use('/api/v1', routes);
 
 app.get('/health', (req, res) => {
   res.json({ status: 200, message: 'Server is running' });
