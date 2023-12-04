@@ -1,5 +1,4 @@
 const HttpError = require('../../common/models/HttpError');
-const Animal = require('../models/animal');
 const animalRepository = require('../repositories/animalsRepository');
 
 class AnimalsService {
@@ -7,8 +6,8 @@ class AnimalsService {
     this.animalRepository = animalRepository;
   }
 
-  async getAll() {
-    return await this.animalRepository.findAll();
+  async getAll(config) {
+    return await this.animalRepository.findAll(config);
   }
 
   async getOneById(id) {
@@ -20,8 +19,7 @@ class AnimalsService {
   }
 
   async create(payload) {
-    const animal = new Animal(payload);
-    return await this.animalRepository.create(animal);
+    return await this.animalRepository.create(payload);
   }
 
   async updateById(id, payload) {

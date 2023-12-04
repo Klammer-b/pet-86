@@ -3,7 +3,7 @@ const Joi = require('joi');
 const updateAnimalSchema = Joi.object({
   query: Joi.object(),
   params: Joi.object({
-    animalId: Joi.string().length(21).required(),
+    animalId: Joi.string().length(24).required(),
   }),
   body: Joi.object({
     name: Joi.string().alphanum().min(3).max(30),
