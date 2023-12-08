@@ -1,4 +1,6 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
+
 const routes = require('./routes');
 const assignRequestId = require('./middlewares/assignRequestId');
 const getLogger = require('./middlewares/logger');
@@ -9,6 +11,7 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 app.use(assignRequestId);
 app.use(getLogger());

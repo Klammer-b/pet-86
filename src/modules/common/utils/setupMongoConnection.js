@@ -9,6 +9,10 @@ const {
 
 const setupMongoConnection = async () => {
   try {
+    console.log(
+      `mongodb+srv://${DB_MONGO_USER}:${DB_MONGO_PASSWORD}@${DB_MONGO_HOST}/${DB_MONGO_DATABASE}`,
+    );
+
     await mongoose.connect(
       `mongodb+srv://${DB_MONGO_USER}:${DB_MONGO_PASSWORD}@${DB_MONGO_HOST}/${DB_MONGO_DATABASE}`,
     );

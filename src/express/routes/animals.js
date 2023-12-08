@@ -4,27 +4,36 @@ const createAnimalSchema = require('../../modules/animals/validationSchemas/crea
 const validate = require('../middlewares/validate');
 const errorWrapper = require('../../modules/common/utils/errorWrapper');
 const updateAnimalSchema = require('../../modules/animals/validationSchemas/updateAnimal');
+const auth = require('../middlewares/auth');
+const checkRole = require('../middlewares/checkRole');
 
 const router = express.Router();
 
-router.get('/', errorWrapper(animalController.getAnimals));
+router.get('/', auth, errorWrapper(animalController.getAnimals));
 
-router.get('/:animalId', errorWrapper(animalController.getAnimalById));
+router.get('/:animalId', auth, errorWrapper(animalController.getAnimalById));
 
 router.post(
   '/',
+  auth,
+  checkRole(['admin']),
   validate(createAnimalSchema),
   errorWrapper(animalController.createAnimal),
 );
 
 router.put(
   '/:animalId',
+  auth,
+  checkRole(['admin']),
   validate(updateAnimalSchema),
   errorWrapper(animalController.updateAnimal),
 );
 
-router.put('/:animalId', errorWrapper(animalController.updateAnimal));
-
-router.delete('/:animalId', errorWrapper(animalController.deleteAnimal));
+router.delete(
+  '/:animalId',
+  auth,
+  checkRole(['admin']),
+  errorWrapper(animalController.deleteAnimal),
+);
 
 module.exports = router;

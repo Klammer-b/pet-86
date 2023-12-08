@@ -8,8 +8,20 @@ class UsersService {
     return await this.usersRepository.create(payload);
   }
 
+  async updateUserById(id, payload) {
+    return await this.usersRepository.updateById(id, payload);
+  }
+
   async findByEmail(email) {
     return await this.usersRepository.findByEmail(email);
+  }
+
+  async findById(id) {
+    return await this.usersRepository.findById(id);
+  }
+
+  async findUserByRefreshToken(token) {
+    return await this.usersRepository.findUserByRefreshToken(token);
   }
 }
 
