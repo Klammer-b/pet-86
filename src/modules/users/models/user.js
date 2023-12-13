@@ -7,6 +7,7 @@ const userSchema = new Schema(
     password: { type: String, required: true },
     refreshToken: { type: String },
     role: { type: String, enum: ['guest', 'admin'], default: 'guest' },
+    avatarUrl: { type: String },
     deletedAt: { type: Date, default: null },
   },
   { versionKey: false, timestamps: true },
