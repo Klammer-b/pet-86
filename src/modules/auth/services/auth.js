@@ -63,7 +63,7 @@ class AuthService {
         email: user.email,
       },
       JWT_SECRET,
-      { expiresIn: 120 },
+      { expiresIn: 1200 },
     );
 
     const refreshToken = crypto.randomBytes(8).toString('base64');
@@ -78,4 +78,4 @@ class AuthService {
 
 const authService = new AuthService(usersService);
 
-module.exports = authService;
+module.exports = { authService, AuthService };
