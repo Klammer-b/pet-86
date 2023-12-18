@@ -1,5 +1,5 @@
 const express = require('express');
-const animalController = require('../../modules/animals/controllers');
+const { animalController } = require('../../modules/animals/controllers');
 const createAnimalSchema = require('../../modules/animals/validationSchemas/createAnimal');
 const validate = require('../middlewares/validate');
 const errorWrapper = require('../../modules/common/utils/errorWrapper');

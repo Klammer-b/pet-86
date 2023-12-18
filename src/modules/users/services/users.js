@@ -8,9 +8,9 @@ class UsersService {
     return await this.usersRepository.create(payload);
   }
 
-  async updateUserById(id, payload) {
+  updateUserById = async (id, payload) => {
     return await this.usersRepository.updateById(id, payload);
-  }
+  };
 
   async findByEmail(email) {
     return await this.usersRepository.findByEmail(email);
