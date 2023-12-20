@@ -41,7 +41,7 @@ class AuthService {
         email: user.email,
       },
       JWT_SECRET,
-      { expiresIn: 120 },
+      { expiresIn: 12000 },
     );
 
     const refreshToken = crypto.randomBytes(8).toString('base64');
