@@ -1,9 +1,10 @@
-const authService = require('../services/auth');
+const { authService } = require('../services/auth');
 
 class AuthController {
   constructor(authService) {
     this.authService = authService;
   }
+
   login = async (req, res) => {
     const { accessToken, refreshToken } = await this.authService.login(
       req.body,
@@ -24,6 +25,7 @@ class AuthController {
   };
 
   register = async (req, res) => {
+    console.log(this.authService);
     const user = await this.authService.register(req.body);
 
     res.json({
@@ -57,6 +59,26 @@ class AuthController {
     res.json({
       status: 200,
       message: 'User is logged out!',
+    });
+  };
+
+  getResetToken = async (req, res) => {
+    const { email } = req.body;
+    await authService.sendResetLinkToEmail(email);
+
+    res.json({
+      status: 200,
+      message: `Reset link is sent to ${email}`,
+    });
+  };
+
+  resetPassword = async (req, res) => {
+    const { token, password } = req.body;
+    await authService.resetPassword({ token, password });
+
+    res.json({
+      status: 200,
+      message: `Password for is reset`,
     });
   };
 }

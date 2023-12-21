@@ -12,6 +12,10 @@ const {
   CLOUDINARY_API_KEY,
   CLOUDINARY_API_SECRET,
   CLOUDINARY_CLOUD,
+  SMTP_HOST,
+  SMTP_PORT,
+  SMTP_USER,
+  SMTP_PASSWORD,
 } = process.env;
 
 if (!DB_MONGO_HOST) {
@@ -50,6 +54,26 @@ if (!CLOUDINARY_CLOUD) {
   console.log('CLOUDINARY_CLOUD is not set');
   process.exit(1);
 }
+if (!SMTP_HOST) {
+  console.log('SMTP_HOST is not set');
+  process.exit(1);
+}
+if (!SMTP_PORT) {
+  console.log('SMTP_PORT is not set');
+  process.exit(1);
+}
+if (!SMTP_USER) {
+  console.log('SMTP_USER is not set');
+  process.exit(1);
+}
+if (!SMTP_PASSWORD) {
+  console.log('SMTP_PASSWORD is not set');
+  process.exit(1);
+}
+if (!SMTP_USER) {
+  console.log('SMTP_USER is not set');
+  process.exit(1);
+}
 
 module.exports = {
   DB_MONGO_HOST,
@@ -61,4 +85,8 @@ module.exports = {
   CLOUDINARY_API_KEY,
   CLOUDINARY_API_SECRET,
   CLOUDINARY_CLOUD,
+  SMTP_HOST,
+  SMTP_PORT,
+  SMTP_USER,
+  SMTP_PASSWORD,
 };
